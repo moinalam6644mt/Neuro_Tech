@@ -1,0 +1,43 @@
+<div ng-controller="doctor_ctr">
+
+	<table class="table table-hover text-white table-bordered">
+
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+				<th>NUMBER</th>
+				<th>GENDER</th>
+				<th>AGE</th>
+				<th>ADDRESS</th>
+                <th>CITY</th>
+                <th>STATE</th>
+                <th>DATE</th>
+                <th>TIME</th>
+			</tr>
+
+		</thead>
+
+		<tbody> 
+			<tr ng-repeat="emp in Employee">
+				<td>{{emp.id}}</td>
+				<td>{{emp.name }}</td>
+				<td>{{emp.email}}</td>
+				<td>{{emp.number}}</td>
+				<td>{{emp.gender}}</td>
+				<td>{{emp.age}}</td>
+                <td>{{emp.address}}</td>
+                <td>{{emp.city}}</td>
+                <td>{{emp.date}}</td>
+                <td>{{emp.time}}</td>
+				<td><button class="btn btn-primary" ng-click="deleteUser(employee.ID)">Delete</button>
+				
+			</tr>
+
+		</tbody>
+
+
+	</table>
+
+</div>

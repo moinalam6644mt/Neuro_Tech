@@ -1,0 +1,36 @@
+<div ng-controller="register">
+
+	<table class="table table-hover text-white table-bordered">
+
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>FULL NAME</th>
+				<th>EMAIL</th>
+				<th>PHONE NUMBER</th>
+				<th>PASSWORD</th>
+				<th>CONFIRM PASSWORD</th>
+				<th>ACTION</th>
+			</tr>
+
+		</thead>
+
+		<tbody> 
+			<tr ng-repeat="teacher in UserList">
+				<td>{{ teacher.ID }}</td>
+				<td>{{ teacher.FULL_NAME }}</td>
+				<td>{{ teacher.E_MAIL}}</td>
+				<td>{{ teacher.PHONE_NUMBER}}</td>
+				<td>{{ teacher.PASSWORD}}</td>
+				<td>{{ teacher.CONFIRM_PASSWORD
+				}}</td>
+				<td><button class="btn btn-primary" ng-click="deleteUser(teacher.ID)">Delete</button>
+				
+			</tr>
+
+		</tbody>
+
+
+	</table>
+
+</div>

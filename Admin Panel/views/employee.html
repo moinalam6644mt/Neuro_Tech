@@ -1,0 +1,30 @@
+<div ng-controller="Emp">
+	<table class="table table-hover text-white table-bordered">
+
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Salary</th>
+				<th>Number</th>
+				<th>Action</th>
+			</tr>
+
+		</thead>
+
+		<tbody> 
+			<tr ng-repeat="emp in EmployeeList">
+				<td>{{emp.id}}</td>
+				<td>{{emp.name}}</td>
+				<td>{{emp.salary}}</td>
+				<td>{{emp.number}}</td>
+				
+				<td><button class="btn btn-primary" ng-click="deleteEmployee(employee.id)">Delete</button>
+				<button class="btn btn-warning" ng-click="updateEmployee(student.id)">Edit</button></td>
+			</tr>
+
+		</tbody>
+
+
+	</table>
+</div>
