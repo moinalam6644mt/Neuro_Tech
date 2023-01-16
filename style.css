@@ -1,0 +1,31 @@
+.a{
+    position:relative;
+    padding-left: 30px;
+}
+.col img{
+     height: 60%;
+     width: 80%;
+     position: relative;
+}
+.aa{
+    height: 50px;
+    width: 70%;
+    border: 10px;
+    position: relative;
+}
+.card img{
+    height: 100%;
+    width: 100%;
+}
+.ss img{
+  height: 90%;   
+}
+.sss img{
+    height: 50%;   
+  }
+  .speicality-img{
+    height: 50%;
+    width: auto;
+    display: inline-flex;
+    border-radius: circle;
+  }
