@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="User_Module">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sheet.css">
+    <script src="../User panel/angular/angular.min.js"></script>
+    <script src="../User panel/angular/angularjs.js"></script>
+    <script src="../User panel/angular/route.js"></script>
+    <script src="../User panel/js/User.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+</head>
+
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<body class="container-fluid " ng-controller="Main_ctr">
+
+    <div class="latest_note bg-dark text-light ">
+    <marquee width="100%;" scrollAmount="5">Neuro_Tech website  are live for patients. You can book appointments from your comfort zone. Contact number 9525952621
+    </marquee></i><strong id="disable_notification"> </strong>
+</div>
+    <!----------------------Nav Bar------------------>
+    <nav class="navbar navbar-expand-lg navbar-light  mx-auto" style="background-color: rgb(37, 87, 97);">
+      <a class="navbar-brand text-light" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="../User panel/index.html">Home</a>
+            </li>
+            <a class="nav-link text-light" href="../User panel/doctor.html">Find Doctor</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link text-light" href="../User panel/other.html">Medicine</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link text-light" href="#">Lab Test</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#">Surgery</a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Others
+            </a>
+            <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">About Us</a>
+              <a class="dropdown-item" href="#">Blogs</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Services</a>
+            </div>
+          </li>
+
+          
+        </ul>
+             
+
+        
+      </div>
+      <div class="d-flex align-items-center">
+        &nbsp;&nbsp;&nbsp;
+  
+        <!-- Notifications -->
+        
+           
+        <!-- Avatar -->
+        <div class="dropdown" ng-hide="profilebtn">
+          <a
+            class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="../User panel/image/WhatsApp Image 2022-08-03 at 4.03.00 PM.jpeg"
+              class="rounded-circle"
+              height="50" width="50"
+              alt="Black and White Portrait of a Man"
+              loading="lazy"
+            />
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+          >
+            <li>
+              <a class="dropdown-item" href="#">My profile</a>
+            </li>
+            
+            <li>
+              <a class="dropdown-item" ng-click="LogoutFun()" href="#">Logout</a>
+            </li>
+            
+          </ul>
+          
+            
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <a href="../User panel/login.html" >
+            <button class="btn btn-warning btn-block  " ng-hide="loginbtn" >login</button>
+          </a>
+      </div>
+    </nav>
+    <section class="text-center bg-info container-fluid " style="background-image:url(image/a8.jpeg) ; height: 400px; width: auto;" ><br>
+        <p class="text-dark " style="font-size: 30px;"><b>BOOK AN APPOINTMENT</b></p>
+        <p class="text-dark"><b>Find the Top doctors clinic and hospitals at nearest in your city </b></p>
+        <div  ><br>
+          <input class="" style="height: 40px; border-radius: 5px; width:10% " type="search" value="location" required placeholder="enter your location" > 
+          <input class="" style="height: 40px;  border-radius: 5px; width:30%" type="search" name="search" required placeholder="search doctors clinic and hospitals in nearest" >
+          <button class="bg-warning " style="height:40px ;  border-radius: 5px;" >search</button><br><br>
+         <b> Popluar searches</b> : <a href="">neurology </a> &nbsp;&nbsp;&nbsp;  <a href=""> General physician </a> &nbsp;&nbsp;&nbsp; <a href=""> orthopedics </a>  &nbsp;&nbsp;&nbsp; <a href=""> cardialogist </a> &nbsp;&nbsp;&nbsp; <a href="">heart speacialist  </a>&nbsp;&nbsp;&nbsp;<a href=""> brain specialist </a> &nbsp;&nbsp;&nbsp;<a href="">dentist</a> 
+        </div><br><br><br><br>
+      </section>
+
+      <section class="container-fluid">
+        <br>
+        <p class="text-center text-dark " style="font-size: 30px;">Find The Best Doctors In Your City </p><br>
+        <div class="row "  >
+          <div class="col-md-6 col-lg-6" >
+        <div class="card mb-3 bg-light"  >
+          <div class="row no-gutters">
+             <div class="col-md-4 col-lg-4">
+              <img src="image/d1.png" alt="...">
+            </div>
+            <div class="col-md-6 col-lg-6 ">
+              <div class="card-body "  >
+                <h5 class="card-title text-dark">Book Lab Test </h5>
+                <p class="card-text text-muted">It's fast , easy and secure .Here availabe all types of test related patients</p>
+                <input class="bg-warning btn " type="button" value="book now " >
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-lg-6" style="height:30% ;" >
+        <div class="card mb-3 bg-light">
+          <div class="row no-gutters">
+            <div class="col-md-4 col-lg-4">
+              <img src="image/d6.jpg" alt="...">
+            </div>
+            <div class="col-md-6 col-lg-6">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Book Appointment</h5>
+                <p class="card-text text-dark">Consult with our Top doctor in area and Book the slot now</p>
+                <input class="bg-warning btn" type="button" value="book now " >
+              </div>
+            </div>
+          </div> 
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-6" style="height:30% ;">
+      <div class="card mb-3 bg-light">
+        <div class="row no-gutters">
+          <div class="col-md-4 col-lg-4">
+            <img src="image/d3.png" alt="...">
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <div class="card-body">
+              <h5 class="card-title text-dark">Surgery</h5>
+              <p class="card-text text-dark">Here available doctor for surgery and check your requirement </p>
+              <input class="bg-warning btn" type="button" value="book now " >
+            </div>
+          </div>
+        </div> 
+      </div>
+      </div>
+      <div class="col-md-6 col-lg-6" style="height:30% ;">
+      <div class="card mb-3 bg-light">
+        <div class="row no-gutters">
+          <div class="col-md-4 col-lg-4">
+            <img src="image/d4.jpg" alt="...">
+          </div>
+          <div class="col-md-6 col-lg-6 ">
+            <div class="card-body ">
+              <h5 class="card-title text-dark">Buy Medicine</h5>
+              <p class="card-text text-dark">It's very for our customer and available medicines.</p>
+              <input class="bg-warning btn " type="button" value="book now " >
+              
+            </div>
+          </div>
+        </div> 
+      </div>
+      </div>
+      </div>
+      </section>
+      <br><br>
+      
+      <section class="container-fluid">
+        <div class="card-group  " >
+          <div class=" ss card mx-1 my-2" style="height: 30%;" >
+            <img src="image/d13.png" class="card-img-top" alt="...">
+            
+          </div>
+          <div class=" sss card mx-1 my-2" style="height: 40%;">
+            <img src="image/d15.jpg" class="card-img-top" alt="...">
+      
+          </div>
+          <div class="card mx-1 my-2" style="height: 40%;">
+           <a href="http://127.0.0.1:5500/doctor.html"> <img src="image/d18.jpg" class="card-img-top" alt="...">
+           </a>
+          </div>
+        </div>
+      </section>
+      
+      <br><br>
+
+      <!-- <section class="section section-specialities container-fluid" style="height: auto; width: auto;" >
+        <div class="container-fluid  ">
+          <div class="section-header text-center  ">
+            <h2>Clinic and Specialities</h2>
+            <p class="sub-title">Find experienced doctors across all specialties</p>
+          </div>
+          
+          <div class="row justify-content-center mx-5">
+            <div class="col-md-9">
+              
+              <div class="specialities-slider slider">
+                <div class="d-flex  text-center">
+                
+                <div class="speicality-item text-center ">
+                  <a href="">
+                    <div class="speicality-img ">
+                      <img src="image/d40.jpg" class="img-fluid" alt="Urology">
+                      <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                    </div>
+                    <p>Urology</p>
+                  </a>
+                </div>	
+                
+                <div class="speicality-item text-center  mx-5 ">
+                  <a href="">
+                    <div class="speicality-img ">
+                      <img src="image/d40.jpg" class="img-fluid" alt="Neurology">
+                      <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                    </div>
+                    <p>Neurology</p>
+                  </a>
+                </div>							
+                
+                <div class="speicality-item text-center  mx-5 ">
+                  <a href="">
+                    <div class="speicality-img">
+                      <img src="image/d40.jpg" class="img-fluid" alt="Orthopedic">
+                      <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                    </div>	
+                    <p>Orthopedic</p>
+                  </a>
+                </div>							
+                
+                
+                <div class="speicality-item text-center  mx-5 ">
+                  <a href="">
+                    <div class="speicality-img">
+                      <img src="image/d40.jpg" class="img-fluid" alt="Cardiologist">
+                      <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                    </div>	
+                    <p>Cardiologist</p>
+                  </a>
+                </div>							
+                
+                <div class="speicality-item text-center  mx-5 ">
+                  <a href="">
+                    <div class="speicality-img">
+                      <img src="image/d41.png" class="img-fluid" alt="Dentist">
+                      <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                    </div>	
+                    <p>Dentist</p>
+                  </a>
+                </div>							
+                
+                <div class="speicality-item text-center  mx-5  ">
+                  <a href="">
+                    <div class="speicality-img">
+                      <img src="image/d42.png" class="img-fluid" alt="Consultant Physician">
+                      <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                    </div>	
+                    <p>Consultant Physician</p>
+                  </a>
+                </div>							
+               
+                <div class="speicality-item text-center  mx-5  ">
+                  <a href="">
+                    <div class="speicality-img">
+                      <img src="image/d40.jpg" class="img-fluid" alt="General Physician">
+                      <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                    </div>	
+                    <p>General Physician</p>
+                  </a>
+                </div>							
+                
+              </div>
+              
+            </div>
+            </div>
+          </div>
+        </div> 
+        <div >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-info mx-auto mb-5" >View More</button>
+        </div>
+      </section>	  -->
+      
+
+      <section class="" style="background-image:linear-gradient(rgb(126, 62, 62),rgb(42, 88, 64)) ; height: 800px;">
+        <div class="container " ><br>
+       <p class="text-center text-light " style="font-size: 30px;"> <b> We've a agressive team at the helm</b></p>
+       <br>
+      <p class="text-center text-light" > Neuro-Tech is a provider for health that helps you in making your health at a very affordable price. We have a doctor base of more than 5,00,000 and are expanding at a rapid rate. </p>
+      <br>
+      <p class="text-center text-light"><b>do</p></b> <br>
+      <p class="text-center text-light "> <> We provide Live + Recorded lectures for placements, university exams and competitive exams like GATE, NET etc. on our website and app aced with test series. We also conduct free live sessions on our You tube channel</p><br>
+      <p class="text-center text-light ">OUR MOTTO:</p><br>
+      <p class="text-center text-light ">e believe in providing quality education to our learners at an affordable price at every corner of the country. We abide by our decisions and each of our employee is committed to his work.
+     </p><br>
+     <div class="row">
+       <div class="col ">
+         <div class="card-group  ">
+           <div class="card mr-sm-5  " style="background: none; border: none;" >
+             <img class="rounded-circle" src="image/a4.jpg" class="card-img-top" alt="...">
+             <div class="card-body text-center text-light">
+               <h3 class="card-title">MOIN ALAM</h3>
+               <p class="card-text">Founder & CEO</p>
+               
+             </div>
+           </div>
+           <div class="card mr-sm-5   " style="background: none; border: none;" >
+             <img class="rounded-circle"  src="image/a3.jpg" class="card-img-top" alt="...">
+             <div class="card-body text-center text-light">
+               <h5 class="card-title">MOIN ALAM</h5>
+               <p class="card-text">CFO and COO</p>
+               
+             </div>
+           </div>
+           <div class="card mr-sm-5" style="background: none ; border: none;">
+             <img class="rounded-circle" src="image/a1.webp" class="card-img-top" alt="...">
+             <div class="card-body text-center text-light">
+               <h5 class="card-title text-light">MOIN ALAM</h5>
+               <p class="card-text">Marketing Senior Manager</p>
+               
+             </div>
+           </div>
+           <div class="card "  style="background: none;  border: none;">
+             <img  class="rounded-circle" src="image/a8.jpeg" class="card-img-top" alt="...">
+             <div class="card-body text-center text-light">
+               <h5 class="card-title text-light">Card title</h5>
+               <p class="card-text text-light">ggbbvvvv.</p>
+               
+             </div>
+           </div>
+         </div>
+     </div>
+     </div>
+     </section><br><br>
+
+
+
+     <section class="container">
+      <div id="accordion">
+<h1 class="text-center " style="font-style: oblique;">Frequently Asked Question</h1><br>
+        <div class="card" style="width: 100%;">
+          <div class="card-header">
+           <h4 class="text-center"> <a class="card-link" style="list-style: none;" data-toggle="collapse" href="#collapseOne">
+              what are you thinking about me you know very well 
+            
+            </a></h4>
+            
+          </div>
+          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+              conefbhidvshhbzvbuidsdhuihsj vkjiufhidfbhvvbiusfehHurbvjbvvuhubjdvnijsduhsiuhvijsbvuhsvihbvuibuhvudbsdjvbusdvdn jcxbvuishhzjbhjhriihjbjrhihbrj kjwehuifhibkjhuihv kvhuhuihbfuij
+            </div>
+          </div>
+        </div>
+      
+        <div class="card" style="width: 100%;">
+          <div class="card-header">
+           <h4 class="text-center"><a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+              Collapsible Group Item #2
+            </a></h4> 
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Lorem ipsum..
+            </div>
+          </div>
+        </div>
+      
+        <div class="card" style="width: 100%;">
+          <div class="card-header">
+            <h4 class="text-center"><a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+             gdfxcvbnhgfdxfcghjkhgrdfhjhgfdsfghjytreryuyresdcvbnmfdxc
+            </a></h4>
+          </div>
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Lorem ipsum..
+            </div>
+          </div>
+        </div>
+      
+      </div>
+     </section><br><br>
+
+
+   <section class="container-fluid bg-dark">
+    <footer class="footer ">
+          
+      <!-- Footer Top -->
+      <div class="footer-top">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+            
+              <!-- Footer Widget -->
+              <div class="footer-widget footer-about">
+                <div class="footer-logo"  > 
+                 <img class="" style="height:70px ; width: 100%;" src="image/d20.png" alt="">
+                </div>
+                <div class="footer-about-content">
+                  <p class="text-light">Medicare is a registered start up company empanelled with 2000 plus doctors and 5 lacs patients lives touched. </p>
+                  <div class="social-icon">
+                    <ul>
+                      <li>
+                        
+                      </li>
+                      <li>
+                        
+                      </li>
+                      <li>
+                        
+                      </li>
+                      <li>
+                        
+                      </li>
+                      <li>
+                        
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /Footer Widget -->
+              
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+            
+              <!-- Footer Widget -->
+              <div class="footer-widget footer-menu">
+                <h2 class="footer-title text-light">For Information</h2><br>
+                <ul>
+                  <li><a class="text-light" href="">About Us</a></li>
+                  <li><a class="text-light" href="">Booking Guide</a></li>
+                  <li><a class="text-light" href="">Pharmacy</a></li>
+                  <li><a class="text-light" href="">Careers</a></li>
+                  <li><a class="text-light" href="">Press Release</a></li>
+                  <li><a class="text-light" href="">FAQ'S</a></li>
+                </ul>
+              </div>
+              <!-- /Footer Widget -->
+              
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+            
+              <!-- Footer Widget -->
+              <div class="footer-widget footer-menu">
+                <h2 class="footer-title text-light">Helpful Links</h2><br>
+                <ul class="text-light">
+                  <li ><a class="text-light" href="">Book Appointment</a></li>
+                  <li><a class="text-light" href="">Franchisee Register</a></li>
+                  <li><a class="text-light" href="">SMS Booking</a></li>
+                  <li ><a class="text-light" href="">Services</a></li>
+                  <li ><a class="text-light" href="">Terms and Conditions</a></li>
+                    <li ><a class="text-light" href="">Policy</a></li>
+                </ul>
+              </div>
+              <!-- /Footer Widget -->
+              
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+            
+              <!-- Footer Widget -->
+              <div class="footer-widget footer-contact">
+                <h2 class="footer-title text-light">Contact Us</h2><br>
+                <div class="footer-contact-info">
+                  <div class="footer-address">
+                    <span ><i class="fas fa-map-marker-alt "></i></span>
+                    <p class="text-light"> QWKPRO CONSULTANCY PVT LTD,<br> Silchar, Assam </p>
+                  </div>
+                  <p class="text-light">
+                    <i class="fa fa-whatsapp" style="font-size: 15px;" aria-hidden="true"></i>&nbsp;
+                    +91 9525952621
+                  </p>
+                  <p class="mb-0 text-light">
+                    Customer Support : <br>
+                   
+                    support@neuro_tech.com <br><br>
+                    Official Queries :<br>
+                    info@neuro_tech.com
+                  </p>
+                </div>
+              </div>
+              <!-- /Footer Widget -->
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- /Footer Top -->
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container-fluid">
+        
+          <!-- Copyright -->
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 col-lg-6">
+                <div class="copyright-text">
+                  <p class="mb-0 text-light">&copy; 2022 . All rights reserved.</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6">
+              
+                <!-- Copyright Menu -->
+                <div class="copyright-menu"><br><br><br>
+                  
+                </div>
+                <!-- /Copyright Menu -->
+                
+              </div>
+            </div>
+          </div>
+          <!-- /Copyright -->
+          
+        </div>
+      </div>
+      <!-- /Footer Bottom -->
+    <a href="" class="whatsapp_btn" target="_blank">
+      
+    </a>	
+      
+    </footer>
+    <!-- /Footer -->
+           
+    </div>
+    <!-- Back-To-Top -->
+  </section>
+  <body>
+    
+  </body>
+  </html>
